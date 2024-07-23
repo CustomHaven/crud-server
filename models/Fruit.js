@@ -9,7 +9,6 @@ class Fruit {
     this.family = fruit.family;
     this.order = fruit.order;
     this.nutritions = fruit.nutritions;
-    this.calories = fruit.calories;
   }
 
   static showAll() {
@@ -46,9 +45,6 @@ class Fruit {
       if (updatedFruit) {
         updatedFruit.name = data.name;
         updatedFruit.family = data.family;
-
-        updatedFruit.calories = data.calories;
-
 
         return new Fruit(updatedFruit);
       } else {
