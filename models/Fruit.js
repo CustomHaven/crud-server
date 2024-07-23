@@ -9,6 +9,7 @@ class Fruit {
     this.family = fruit.family;
     this.order = fruit.order;
     this.nutritions = fruit.nutritions;
+    this.calories = fruit.calories;
   }
 
   static showAll() {
@@ -32,7 +33,7 @@ class Fruit {
     if (fruit) {
       throw "Fruit already exist";
     } else {
-      console.log(newFruit);
+      newFruit.id = fruit.length + 1;
       fruits.push(newFruit);
   
       return new Fruit(newFruit);
@@ -45,6 +46,9 @@ class Fruit {
       if (updatedFruit) {
         updatedFruit.name = data.name;
         updatedFruit.family = data.family;
+
+        updatedFruit.calories = data.calories;
+
 
         return new Fruit(updatedFruit);
       } else {
@@ -60,7 +64,7 @@ class Fruit {
       const index = fruits.indexOf(deletedFruit);
       fruits.splice(index, 1);
     } else {
-      throw "Quote not found";
+      throw "Fruit not found";
     }
   };
 }

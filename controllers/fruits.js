@@ -34,7 +34,7 @@ const create = async (req, res) => {
     // 2. Send a response with a status code and the new element
     res.status(201).send(newFruit);
   } catch (error) {
-    res.status(409).send({ error: error });    
+    res.status(409).send({ error: error });
   }
 }
 
@@ -56,7 +56,7 @@ const destroy = async (req, res) => {
   try {
     const fruit = await Fruit.show(name);
     // console.log("fr", fruit)
-    const destroyed = await fruit.destroy(fruit);
+    const destroyed = await fruit.destroy();
 
     res.status(200).send(destroyed);
     
