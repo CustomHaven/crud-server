@@ -27,10 +27,17 @@ class Fruit {
 
   static create(data) {
     const newFruit = data;
-    console.log(newFruit);
-    fruits.push(newFruit);
+    const fruit = Fruit.show(fruit => fruit.name.toLowerCase() === newFruit.name.toLowerCase());
 
-    return new Fruit(newFruit);
+    if (fruit) {
+      throw "Fruit already exist";
+    } else {
+      console.log(newFruit);
+      fruits.push(newFruit);
+  
+      return new Fruit(newFruit);
+    }
+
   }
 
   update(data) {
